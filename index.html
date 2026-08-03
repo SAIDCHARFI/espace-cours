@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Espace Cours — Pr. [Votre Nom]</title>
+<meta name="description" content="Supports de cours, TD et TP pour les étudiants." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark">EC</div>
+      <div class="brand-text">
+        <p class="site-title">Espace Cours</p>
+        <p class="site-sub">Pr. [Votre Nom] — [Département / Établissement]</p>
+      </div>
+    </div>
+    <nav class="site-nav">
+      <a href="#algo">Algorithmique</a>
+      <a href="#bdd">Bases de Données</a>
+      <a href="#reseaux">Réseaux</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Semestre en cours — S1 2026/2027</p>
+    <h1>Tous vos supports de cours, TD et TP au même endroit.</h1>
+    <p>
+      Retrouvez ici l'ensemble des documents pédagogiques mis à jour tout au long
+      du semestre : polycopiés de cours, énoncés de travaux dirigés et sujets
+      de travaux pratiques, classés par matière.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">03</span>
+        <span class="stat-label">Matières</span>
+      </div>
+      <div>
+        <span class="stat-num">12</span>
+        <span class="stat-label">Documents</span>
+      </div>
+      <div>
+        <span class="stat-num">2026</span>
+        <span class="stat-label">Année universitaire</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container">
+    <span class="filter-label">Filtrer :</span>
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="cours">Cours</button>
+    <button class="filter-btn" data-filter="td">TD</button>
+    <button class="filter-btn" data-filter="tp">TP</button>
+  </div>
+</div>
+
+<main class="courses">
+  <div class="container">
+
+    <!-- ================= MATIÈRE 1 ================= -->
+    <article class="course-block" id="algo">
+      <div class="course-head">
+        <div class="stamp">ALG<br />301</div>
+        <div>
+          <h2>Algorithmique &amp; Structures de Données</h2>
+          <p class="course-meta">Licence 3 — Semestre 1 — 6 séances</p>
+        </div>
+      </div>
+
+      <table class="doc-table">
+        <thead>
+          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr class="doc-row" data-type="cours">
+            <td><span class="doc-tag tag-cours">Cours</span></td>
+            <td>
+              <div class="doc-title">Chapitre 1 — Complexité algorithmique</div>
+              <div class="doc-desc">Notation grand O, analyse asymptotique</div>
+            </td>
+            <td class="doc-date">02 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/algo-cours-01.pdf" download>Télécharger</a></td>
+          </tr>
+          <tr class="doc-row" data-type="td">
+            <td><span class="doc-tag tag-td">TD</span></td>
+            <td>
+              <div class="doc-title">TD n°1 — Exercices de récursivité</div>
+              <div class="doc-desc">6 exercices, corrigé disponible en séance</div>
+            </td>
+            <td class="doc-date">05 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/algo-td-01.pdf" download>Télécharger</a></td>
+          </tr>
+          <tr class="doc-row" data-type="tp">
+            <td><span class="doc-tag tag-tp">TP</span></td>
+            <td>
+              <div class="doc-title">TP n°1 — Implémentation d'une liste chaînée</div>
+              <div class="doc-desc">Langage : C — rendu sur Moodle avant le 12/09</div>
+            </td>
+            <td class="doc-date">05 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/algo-tp-01.pdf" download>Télécharger</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ================= MATIÈRE 2 ================= -->
+    <article class="course-block" id="bdd">
+      <div class="course-head">
+        <div class="stamp">BDD<br />210</div>
+        <div>
+          <h2>Bases de Données</h2>
+          <p class="course-meta">Licence 2 — Semestre 1 — 4 séances</p>
+        </div>
+      </div>
+
+      <table class="doc-table">
+        <thead>
+          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr class="doc-row" data-type="cours">
+            <td><span class="doc-tag tag-cours">Cours</span></td>
+            <td>
+              <div class="doc-title">Chapitre 1 — Modèle relationnel</div>
+              <div class="doc-desc">Entités, relations, normalisation</div>
+            </td>
+            <td class="doc-date">01 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/bdd-cours-01.pdf" download>Télécharger</a></td>
+          </tr>
+          <tr class="doc-row" data-type="td">
+            <td><span class="doc-tag tag-td">TD</span></td>
+            <td>
+              <div class="doc-title">TD n°1 — Modélisation E/A</div>
+              <div class="doc-desc">Étude de cas : gestion de bibliothèque</div>
+            </td>
+            <td class="doc-date">04 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/bdd-td-01.pdf" download>Télécharger</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ================= MATIÈRE 3 ================= -->
+    <article class="course-block" id="reseaux">
+      <div class="course-head">
+        <div class="stamp">RES<br />220</div>
+        <div>
+          <h2>Réseaux Informatiques</h2>
+          <p class="course-meta">Licence 2 — Semestre 1 — 5 séances</p>
+        </div>
+      </div>
+
+      <table class="doc-table">
+        <thead>
+          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr class="doc-row" data-type="cours">
+            <td><span class="doc-tag tag-cours">Cours</span></td>
+            <td>
+              <div class="doc-title">Chapitre 1 — Modèle OSI et TCP/IP</div>
+              <div class="doc-desc">Couches, protocoles, encapsulation</div>
+            </td>
+            <td class="doc-date">03 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/reseaux-cours-01.pdf" download>Télécharger</a></td>
+          </tr>
+          <tr class="doc-row" data-type="tp">
+            <td><span class="doc-tag tag-tp">TP</span></td>
+            <td>
+              <div class="doc-title">TP n°1 — Configuration réseau sous Linux</div>
+              <div class="doc-desc">Commandes ip, ping, traceroute</div>
+            </td>
+            <td class="doc-date">06 sept. 2026</td>
+            <td><a class="dl-btn" href="pdfs/reseaux-tp-01.pdf" download>Télécharger</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <span>© 2026 — Espace Cours — Pr. [Votre Nom]</span>
+    <span>Contact : <a href="mailto:votre.email@universite.fr">votre.email@universite.fr</a></span>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

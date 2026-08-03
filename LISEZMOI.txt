@@ -1,0 +1,10 @@
+Placez ici vos vrais fichiers PDF (cours, TD, TP).
+
+Chaque lien dans index.html pointe vers un fichier de ce dossier, par exemple :
+  pdfs/algo-cours-01.pdf
+
+Pour ajouter un nouveau document :
+1. Déposez le PDF dans ce dossier "pdfs/"
+2. Ouvrez index.html et copiez une ligne <tr class="doc-row" ...>...</tr>
+3. Changez le titre, la description, la date, et le "href" vers votre fichier
+4. Mettez data-type="cours", "td" ou "tp" selon le type de document
