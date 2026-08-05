@@ -1,29 +1,54 @@
-// Filtre simple par type de document (Tous / Cours / TD / TP)
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".filter-btn");
-  const rows = document.querySelectorAll(".doc-row");
+document.addEventListener("DOMContentLoaded", function () {
+  // --- Gestion de la boîte Modale IA ---
+  const openBtn = document.getElementById("openNotebookBtn");
+  const closeBtn = document.getElementById("closeNotebookBtn");
+  const modal = document.getElementById("notebookModal");
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      buttons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+  if (openBtn && modal) {
+    // Ouvrir la boîte modale au clic
+    openBtn.addEventListener("click", function () {
+      modal.classList.add("active");
+    });
 
-      const filter = btn.dataset.filter;
+    // Fermer avec le bouton (X)
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
+    }
 
-      rows.forEach((row) => {
-        if (filter === "all" || row.dataset.type === filter) {
+    // Fermer en cliquant en dehors de la fenêtre
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+
+    // Fermer avec la touche Échap (Escape)
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+
+  // --- Gestion du filtrage des documents ---
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const docRows = document.querySelectorAll(".doc-row");
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      const filterValue = this.getAttribute("data-filter");
+
+      docRows.forEach(function (row) {
+        if (filterValue === "all" || row.getAttribute("data-type") === filterValue) {
           row.style.display = "";
         } else {
           row.style.display = "none";
         }
-      });
-
-      // Masquer les blocs de cours devenus vides
-      document.querySelectorAll(".course-block").forEach((block) => {
-        const visibleRows = block.querySelectorAll(
-          '.doc-row:not([style*="display: none"])'
-        );
-        block.style.display = visibleRows.length ? "" : "none";
       });
     });
   });
