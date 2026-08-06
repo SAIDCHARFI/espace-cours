@@ -1,454 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Espace Cours — Pr. CHARFI Said</title>
-  <meta name="description" content="Supports de cours, TD et TP pour les étudiants." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Google Fonts pour une typographie soignée -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <div class="brand">
-      <div class="brand-mark">EC</div>
-      <div class="brand-text">
-        <p class="site-title">Espace Cours</p>
-        <p class="site-sub">Pr. CHARFI Said — Département Informatique / Faculté des Sciences Agadir</p>
+  <!-- ================= EN-TÊTE DU SITE ================= -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <h1>Espace de Cours</h1>
+        <p class="subtitle">Pr. CHARFI Said — Support de cours & ressources pédagogiques</p>
+      </div>
+      <nav class="main-nav">
+        <a href="#cours" class="nav-link">Cours</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= CONTENU PRINCIPAL ================= -->
+  <main class="main-content" id="cours">
+    <div class="container">
+      
+      <!-- Section d'introduction -->
+      <section class="intro-card">
+        <h2>Bienvenue sur votre plateforme de cours</h2>
+        <p> Retrouvez l'ensemble des documents de cours, travaux dirigés (TD), travaux pratiques (TP) et projets. Utilisez les filtres ci-dessous pour naviguer facilement dans les ressources.</p>
+      </section>
+
+      <!-- Barre de filtrage des documents -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tous les documents</button>
+        <button class="filter-btn" data-filter="cours">Cours</button>
+        <button class="filter-btn" data-filter="td">TD</button>
+        <button class="filter-btn" data-filter="tp">TP</button>
+        <button class="filter-btn" data-filter="projet">Projets</button>
+      </div>
+
+      <!-- Liste des documents -->
+      <div class="docs-list">
+        
+        <!-- Exemple de ligne de document (À adapter selon vos vrais fichiers) -->
+        <div class="doc-row" data-type="cours">
+          <div class="doc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div class="doc-info">
+            <h3>Chapitre 1 : Introduction & Fondations</h3>
+            <p>Présentation générale des concepts clés et architectures de base.</p>
+          </div>
+          <div class="doc-actions">
+            <a href="#" class="btn-download" target="_blank">Télécharger PDF</a>
+          </div>
+        </div>
+
+        <div class="doc-row" data-type="td">
+          <div class="doc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </div>
+          <div class="doc-info">
+            <h3>Fiche TD 1 : Exercices d'application</h3>
+            <p>Série d'exercices pratiques pour valider le Chapitre 1.</p>
+          </div>
+          <div class="doc-actions">
+            <a href="#" class="btn-download" target="_blank">Télécharger PDF</a>
+          </div>
+        </div>
+
+        <div class="doc-row" data-type="tp">
+          <div class="doc-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div class="doc-info">
+            <h3>TP 1 : Prise en main & Implémentation</h3>
+            <p>Consignes du TP à réaliser sur environnement Python.</p>
+          </div>
+          <div class="doc-actions">
+            <a href="#" class="btn-download" target="_blank">Télécharger PDF</a>
+          </div>
+        </div>
+
       </div>
     </div>
-    <nav class="site-nav">
-      <a href="#cpp">Langage C++</a>
-      <a href="#mobile">Programmation mobile</a>
-      <a href="#ia">Intelligence Artificielle</a>
-      <a href="#ia-avancee">IA Avancée</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  </main>
 
-<section class="hero">
-  <div class="container">
-    <p class="hero-eyebrow">Ressources pédagogiques</p>
-    <h1>Tous vos supports de cours, TD et TP au même endroit.</h1>
-    <p>
-      Retrouvez ici l'ensemble des documents pédagogiques mis à jour tout au long
-      du semestre : polycopiés de cours, énoncés de travaux dirigés et sujets
-      de travaux pratiques, classés par matière.
-    </p>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">04</span>
-        <span class="stat-label">Matières</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">24</span>
-        <span class="stat-label">Documents</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">2026</span>
-        <span class="stat-label">Année universitaire</span>
-      </div>
+  <!-- ================= BOUTON FLOTTANT ASSISTANT IA ================= -->
+  <button class="notebook-fab" id="openNotebookBtn" title="Ouvrir l'Assistant IA">
+    <div class="fab-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
     </div>
-  </div>
-</section>
+    <span class="fab-text">Assistant IA du Cours</span>
+  </button>
 
-<div class="filter-bar">
-  <div class="container">
-    <span class="filter-label">Filtrer :</span>
-    <button class="filter-btn active" data-filter="all">Tous</button>
-    <button class="filter-btn" data-filter="cours">Cours</button>
-    <button class="filter-btn" data-filter="td">TD</button>
-    <button class="filter-btn" data-filter="tp">TP</button>
-  </div>
-</div>
-
-<main class="courses">
-  <div class="container">
-
-    <!-- ================= C++ ================= -->
-    <article class="course-block" id="cpp">
-      <div class="course-head">
-        <div class="stamp">CPP<br /></div>
-        <div>
-          <h2>Langage de Programmation C++</h2>
-          <p class="course-meta">Licence — Semestre 4</p>
-        </div>
-      </div>
-
-      <table class="doc-table">
-        <thead>
-          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Support de Cours — Programmation Orientée Objet C++</div>
-              <div class="doc-desc">Concepts fondamentaux de la POO en C++</div>
-            </td>
-            <td class="doc-date">02 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Cours_POO.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°1 — Programmation C++</div>
-              <div class="doc-desc">Prise en main et structures de base</div>
-            </td>
-            <td class="doc-date">05 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP1_C++.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°2 — Programmation C++</div>
-              <div class="doc-desc">Classes, objets et encapsulation</div>
-            </td>
-            <td class="doc-date">12 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP2_C++.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°3 — Programmation C++</div>
-              <div class="doc-desc">Héritage et polymorphisme</div>
-            </td>
-            <td class="doc-date">19 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP3_C++.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-    <!-- ================= Programmation mobile ================= -->
-    <article class="course-block" id="mobile">
-      <div class="course-head">
-        <div class="stamp">MOB<br /></div>
-        <div>
-          <h2>Programmation Mobile</h2>
-          <p class="course-meta">Licence — Semestre 6</p>
-        </div>
-      </div>
-
-      <table class="doc-table">
-        <thead>
-          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Support de Cours — Programmation Mobile</div>
-              <div class="doc-desc">Architecture et développement d'applications mobiles</div>
-            </td>
-            <td class="doc-date">03 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Mobile.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">Série n°1 — Travaux Pratiques</div>
-              <div class="doc-desc">Bases du développement mobile</div>
-            </td>
-            <td class="doc-date">06 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Serie 1.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">Série n°2 — Travaux Pratiques</div>
-              <div class="doc-desc">Conception d'interfaces utilisateurs</div>
-            </td>
-            <td class="doc-date">13 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Serie 2.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">Série n°3 — Travaux Pratiques</div>
-              <div class="doc-desc">Gestion des événements et navigation</div>
-            </td>
-            <td class="doc-date">20 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Serie 3.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">Série n°4 — Travaux Pratiques</div>
-              <div class="doc-desc">Intégration de services et API</div>
-            </td>
-            <td class="doc-date">27 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Serie 4.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-    <!-- ================= Intelligence Artificielle ================= -->
-    <article class="course-block" id="ia">
-      <div class="course-head">
-        <div class="stamp">IA<br /></div>
-        <div>
-          <h2>Intelligence Artificielle</h2>
-          <p class="course-meta">Cycle d'ingénieur — Semestre 7</p>
-        </div>
-      </div>
-
-      <table class="doc-table">
-        <thead>
-          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Support de Cours — Intelligence Artificielle</div>
-              <div class="doc-desc">Fondements de l'IA et algorithmes fondamentaux</div>
-            </td>
-            <td class="doc-date">01 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/IA.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Agents Intelligents</div>
-              <div class="doc-desc">Modélisation et comportement des agents</div>
-            </td>
-            <td class="doc-date">04 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_agents_intelligents.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Recherche Non Informée</div>
-              <div class="doc-desc">Algorithmes de recherche aveugle (BFS, DFS)</div>
-            </td>
-            <td class="doc-date">10 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_Recherche_non_Inform%C3%A9.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Recherche Informée</div>
-              <div class="doc-desc">Algorithmes heuristiques et A*</div>
-            </td>
-            <td class="doc-date">15 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_Recherche_Inform%C3%A9%20-%20.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Machine Learning</div>
-              <div class="doc-desc">Introduction à l'apprentissage automatique</div>
-            </td>
-            <td class="doc-date">22 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_ML.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Clustering</div>
-              <div class="doc-desc">Algorithmes d'apprentissage non supervisé</div>
-            </td>
-            <td class="doc-date">28 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_Clustering.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP — Tracking & Suivi d'Objets</div>
-              <div class="doc-desc">Techniques de suivi en vision par ordinateur</div>
-            </td>
-            <td class="doc-date">02 oct. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP_Tracking.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-    <!-- ================= IA Avancée ================= -->
-    <article class="course-block" id="ia-avancee">
-      <div class="course-head">
-        <div class="stamp">IA<br /></div>
-        <div>
-          <h2>Intelligence Artificielle Avancée</h2>
-          <p class="course-meta">Cycle d'ingénieur — Semestre 8</p>
-        </div>
-      </div>
-
-      <table class="doc-table">
-        <thead>
-          <tr><th>Type</th><th>Document</th><th>Ajouté le</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 1 — Machine Learning & Deep Learning (Partie 1)</div>
-              <div class="doc-desc">Introduction aux architectures profondes</div>
-            </td>
-            <td class="doc-date">02 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%201.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 1 — Machine Learning & Deep Learning (Suite)</div>
-              <div class="doc-desc">Continuation des principes fondamentaux</div>
-            </td>
-            <td class="doc-date">05 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%201-Continuation.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 2 — Réseaux de Neurones Convolutifs (CNN)</div>
-              <div class="doc-desc">Traitements d'images et architectures de vision</div>
-            </td>
-            <td class="doc-date">09 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%202.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 2 — Réseaux Convolutifs (Suite)</div>
-              <div class="doc-desc">Techniques avancées de convolution et d'optimisation</div>
-            </td>
-            <td class="doc-date">12 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%202-continuation.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 3 — Architectures Avancées</div>
-              <div class="doc-desc">Modèles génératifs et réseaux récurrents / Transformers</div>
-            </td>
-            <td class="doc-date">16 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%203.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Chapitre 4 — Vision 3D et Traitement Avancé</div>
-              <div class="doc-desc">Reconstruction 3D et estimation spatiale</div>
-            </td>
-            <td class="doc-date">23 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Chapitre%204.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="cours">
-            <td><span class="doc-tag tag-cours">Cours</span></td>
-            <td>
-              <div class="doc-title">Module Spécial — Estimation de Profondeur</div>
-              <div class="doc-desc">Méthodes de Monocular & Stereo Depth Estimation</div>
-            </td>
-            <td class="doc-date">30 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/Estimation%20Profondeur.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°1 — IA Avancée</div>
-              <div class="doc-desc">Mise en pratique des concepts initiaux</div>
-            </td>
-            <td class="doc-date">05 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP1.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°2 — IA Avancée</div>
-              <div class="doc-desc">Implémentation de modèles profonds</div>
-            </td>
-            <td class="doc-date">12 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP2.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°3 — IA Avancée</div>
-              <div class="doc-desc">Entraînement et fine-tuning</div>
-            </td>
-            <td class="doc-date">19 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP3.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°4 — IA Avancée</div>
-              <div class="doc-desc">Applications pratiques en Deep Learning</div>
-            </td>
-            <td class="doc-date">26 sept. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP%204.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°5 — IA Avancée</div>
-              <div class="doc-desc">Vision par ordinateur avancée</div>
-            </td>
-            <td class="doc-date">03 oct. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP5.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-          <tr class="doc-row" data-type="tp">
-            <td><span class="doc-tag tag-tp">TP</span></td>
-            <td>
-              <div class="doc-title">TP n°6 — IA Avancée</div>
-              <div class="doc-desc">Projet pratique / Évaluation</div>
-            </td>
-            <td class="doc-date">10 oct. 2026</td>
-            <td class="doc-action"><a class="dl-btn" href="pdfs/TP6.pdf" download><span class="dl-icon">↓</span> Télécharger</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-  </div>
-</main>
-
-<!-- BOUTON FLOTTANT -->
-<button class="notebook-fab" id="openNotebookBtn" title="Ouvrir l'Assistant IA">
-  <div class="fab-icon">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-  </div>
-  <span class="fab-text">Assistant IA du Cours</span>
-</button>
-
-<!-- FENÊTRE MODALE ASSISTANT SUR LE SITE -->
-<div class="modal-overlay" id="notebookModal">
-  <div class="modal-card">
-    <div class="modal-header">
-      <div class="modal-title-group">
-        <span class="modal-badge">IA</span>
-        <h3>Assistant Pédagogique du Cours</h3>
-      </div>
-      <button class="modal-close" id="closeNotebookBtn" aria-label="Fermer">&times;</button>
+  <!-- ================= PIED DE PAGE ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <span>© 2026 — Espace Cours — Pr. CHARFI Said</span>
+      <span>Contact : <a href="mailto:s.charfi@uiz.ac.ma">s.charfi@uiz.ac.ma</a></span>
     </div>
-    <div class="modal-body">
-      <iframe 
-        src="https://notebook.google.com/notebook/47d33ef0-e66e-4c1c-8d0e-93e682bf35d5" 
-        class="notebook-frame"
-        title="Assistant de cours NotebookLM"
-        allow="clipboard-write">
-      </iframe>
-    </div>
-  </div>
-</div>
+  </footer>
 
-<footer class="site-footer" id="contact">
-  <div class="container">
-    <span>© 2026 — Espace Cours — Pr. CHARFI Said</span>
-    <span>Contact : <a href="mailto:s.charfi@uiz.ac.ma">s.charfi@uiz.ac.ma</a></span>
-  </div>
-</footer>
-
-<script src="assets/script.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
