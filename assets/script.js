@@ -1,38 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- Gestion de la boîte Modale IA ---
+  
+  // --- Gestion de la Fenêtre Popup Assistant IA ---
   const openBtn = document.getElementById("openNotebookBtn");
-  const closeBtn = document.getElementById("closeNotebookBtn");
-  const modal = document.getElementById("notebookModal");
+  const notebookUrl = "https://notebook.google.com/notebook/47d33ef0-e66e-4c1c-8d0e-93e682bf35d5";
 
-  if (openBtn && modal) {
-    // Ouvrir la boîte modale au clic
-    openBtn.addEventListener("click", function () {
-      modal.classList.add("active");
-    });
+  if (openBtn) {
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    // Fermer avec le bouton (X)
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        modal.classList.remove("active");
-      });
-    }
+      // Largeur fixée (type panneau latéral) et hauteur adaptée à l'écran de l'étudiant
+      const width = 540;
+      const height = window.innerHeight - 80;
+      
+      // Positionnement automatique tout à droite de l'écran
+      const left = window.screen.width - width - 30;
+      const top = 40;
 
-    // Fermer en cliquant en dehors de la fenêtre
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-      }
-    });
+      // Propriétés de la fenêtre popup
+      const windowFeatures = `
+        width=${width},
+        height=${height},
+        top=${top},
+        left=${left},
+        resizable=yes,
+        scrollbars=yes,
+        status=no,
+        toolbar=no,
+        menubar=no,
+        location=no
+      `;
 
-    // Fermer avec la touche Échap (Escape)
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && modal.classList.contains("active")) {
-        modal.classList.remove("active");
-      }
+      // Ouverture de la fenêtre sur-mesure
+      window.open(notebookUrl, "NotebookLMAssistant", windowFeatures);
     });
   }
 
-  // --- Gestion du filtrage des documents ---
+  // --- Gestion du filtrage des documents (Conservé à l'identique) ---
   const filterBtns = document.querySelectorAll(".filter-btn");
   const docRows = document.querySelectorAll(".doc-row");
 
