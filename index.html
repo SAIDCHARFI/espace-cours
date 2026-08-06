@@ -27,6 +27,7 @@
       <a href="#mobile">Programmation mobile</a>
       <a href="#ia">Intelligence Artificielle</a>
       <a href="#ia-avancee">IA Avancée</a>
+      <button class="notebook-btn" onclick="openNotebookModal()">🤖 Assistant NotebookLM</button>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -420,6 +421,28 @@
 
 <!-- Bouton Flottant (Retour en haut de page) -->
 <a href="#top" class="floating-btn" aria-label="Retour en haut de la page">↑</a>
+
+<!-- Fenêtre Contrôlée (Modal NotebookLM) -->
+<div class="notebook-modal" id="notebookModal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closeNotebookModal()"></div>
+  <div class="modal-window">
+    <div class="modal-header">
+      <div class="modal-title">
+        <span>🤖</span>
+        <h3>Assistant de cours — NotebookLM</h3>
+      </div>
+      <div class="modal-actions">
+        <!-- Remplacez l'URL href ci-dessous par l'URL exacte de votre NotebookLM si besoin de l'ouvrir en plein écran -->
+        <a href="https://notebooklm.google.com" target="_blank" rel="noopener noreferrer" class="external-link-btn" title="Ouvrir dans un nouvel onglet">↗️ Plein écran</a>
+        <button class="close-btn" onclick="closeNotebookModal()" aria-label="Fermer la fenêtre">&times;</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <!-- REMPLACEZ l'attribut src par l'URL exacte de votre instance NotebookLM -->
+      <iframe src="https://notebooklm.google.com" title="NotebookLM Assistant" id="notebookIframe" allow="clipboard-write"></iframe>
+    </div>
+  </div>
+</div>
 
 <script src="assets/script.js"></script>
 </body>
