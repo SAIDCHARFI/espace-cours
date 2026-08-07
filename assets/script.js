@@ -1,26 +1,31 @@
-// Fonction pour ouvrir la fenêtre de NotebookLM
-function openNotebookModal() {
-  const modal = document.getElementById('notebookModal');
-  if (modal) {
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Empêche le défilement en arrière-plan
-  }
-}
+// Le bouton "Assistant NotebookLM" est maintenant un simple lien qui ouvre
+// NotebookLM dans un nouvel onglet (Google bloque l'affichage de NotebookLM
+// dans une iframe, c'est pour ça que la fenêtre ne s'ouvrait pas avant).
+// Aucun script n'est donc nécessaire pour ce bouton.
 
-// Fonction pour fermer la fenêtre
-function closeNotebookModal() {
-  const modal = document.getElementById('notebookModal');
-  if (modal) {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = ''; // Rétablit le défilement
-  }
-}
+// Filtrage des documents (Tous / Cours / TD / TP)
+document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('.doc-row');
+  const blocks = document.querySelectorAll('.course-block');
 
-// Fermer la modal si touche Echap pressée
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    closeNotebookModal();
-  }
+  filterButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterButtons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      rows.forEach(function (row) {
+        const match = filter === 'all' || row.getAttribute('data-type') === filter;
+        row.classList.toggle('is-hidden', !match);
+      });
+
+      // Masquer une matière entière si plus aucun document n'y correspond
+      blocks.forEach(function (block) {
+        const visibleRows = block.querySelectorAll('.doc-row:not(.is-hidden)');
+        block.classList.toggle('is-hidden', visibleRows.length === 0);
+      });
+    });
+  });
 });
